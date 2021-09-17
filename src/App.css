@@ -1,0 +1,9 @@
+body {
+  background: linear-gradient(180deg, rgb(73, 13, 5) 0%, rgb(0, 0, 0) 40%);
+  overflow-x: hidden;
+  padding-left: 220px;
+  padding-bottom: 200px;
+  font-size: 1rem;
+}
+
+

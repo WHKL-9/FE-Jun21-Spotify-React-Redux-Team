@@ -1,0 +1,32 @@
+.Layout {
+    background: #121212;
+    padding-bottom: 3rem;
+    position: fixed;
+    right: 0;
+    width: 85vw;
+    min-height: 90vh;
+    max-height: 90vh;
+    overflow: auto;
+  }
+
+  .table {
+    margin-right: 20px;
+    font-size: 12px;
+  }
+  
+  .table td {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: #e6e7e8;
+  }
+  
+  .albumSong {
+    font-size: 14px;
+  }
+  
+  tr.border_bottom td {
+    border-bottom: 1px solid #2e2e2e;
+  }
+  
