@@ -1,16 +1,54 @@
-#largeCard {
-    background-color: rgba(51, 51, 51, 0.5) !important;
-    border: 0;
-    color: white;
-    height: 260px;
+.largeCard {
+    
+    
+    color: whitesmoke;
+    height: 16rem;
+    width: 11rem;
     font-size: 0.75rem;
-    font-weight: 700;
+    font-weight: 400;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    background-color: rgba(19, 19, 19, 0.904) !important;
+    border-radius: 2px;
+    border: 0;
+  
     
   }
 
+  #largeCardImg {
+    width: auto;
+    height: 11rem;
+    padding: 1rem;
+  }
 
+  .largeCardTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 0.7rem;
+    margin-left: 1rem;
 
+  }
+
+  .largeCardText {
+    margin-left: 1rem;
+  }
+
+  #largeCard {
+    
+    
+    color: whitesmoke;
+    height: 16rem;
+    width: 11rem;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: rgba(19, 19, 19, 0.904) !important;
+    border-radius: 2px;
+    border: 0;
+  
+    
+  }
   

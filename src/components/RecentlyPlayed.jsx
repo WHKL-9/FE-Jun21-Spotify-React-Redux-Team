@@ -9,12 +9,18 @@ export default class RecentlyPlayed extends Component {
 
         this.state = {data: undefined}
     }
-    
+
     componentDidMount = async () => {
         try {
             let response = await fetch(
-              "https://striveschool-api.herokuapp.com/api/deezer/search?q=Folamour",
-              {}
+              `https://striveschool-api.herokuapp.com/api/deezer/search?q=${this.props.artistName}`,
+              {
+                method: "GET",
+                headers: {
+                  "x-rapidapi-host": "deezerdevs-deezer.p.rapidapi.com",
+                  "x-rapidapi-key": "ee2d36b39fmsh97cf1f56660e250p12cdf8jsn85080d3b2768",
+              }
+              }
             )
             if (response.ok) {
               let jsonResponse = await response.json();
@@ -34,7 +40,7 @@ export default class RecentlyPlayed extends Component {
                 <h2 className="text-white mt-5">Recently Played</h2>
                 <Row>
                     {this.state.data && this.state.data.map(item => {
-                        return <LargeCard title={item.title} image={item.album.cover} artist={item.artist.name} />
+                        return <LargeCard songObj={item}/>
                     })}
                 </Row>
             </div>
