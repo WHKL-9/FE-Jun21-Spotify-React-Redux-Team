@@ -8,7 +8,7 @@ import { addSongToPlaylist } from "../actions";
 
 const mapStateToProps = (state) => ({
   currentSong: state.play.currentSong,
-  playList: state.playList
+  playList: state.playList.tracks
 
 });
 

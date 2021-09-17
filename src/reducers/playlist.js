@@ -1,11 +1,11 @@
 import { initialState } from "../store";
 
-const playlistReducer = (state = initialState.playlist.tracks, action) => {
+const playlistReducer = (state = initialState.playList, action) => {
   switch (action.type) {
     case "ADD_SONG_TO_PLAYLIST":
       return {
         ...state,
-        tracks: [...state.tracks, ...action.payload],
+        tracks: [...state.tracks, action.payload],
       };
     case "REMOVE_SONG_FROM_PLAYLIST":
       return {

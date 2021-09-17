@@ -11,7 +11,7 @@ export const initialState = {
     // setting it to null is a safer option 
       currentSong: (null)
   },
-  playlist: {
+  playList: {
     tracks: [],
     loading: true, 
     error: false
