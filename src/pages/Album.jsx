@@ -4,16 +4,22 @@ import { connect } from "react-redux";
 import { playSong } from "../actions";
 import { Button } from "react-bootstrap";
 import {FcLike} from "react-icons/fc"
+import { addSongToPlaylist } from "../actions";
 
 const mapStateToProps = (state) => ({
   currentSong: state.play.currentSong,
+  playList: state.playList
+
 });
 
 const mapDispatchToProps = (dispatch) => ({
   addToCurrentSong: (song) => dispatch(playSong(song)),
+  addToPlaylist: (song) => dispatch (addSongToPlaylist(song))
 });
 
-const Album = ({ match, addToCurrentSong }) => {
+
+
+const Album = ({ match, addToCurrentSong, addToPlaylist}) => {
   const albumId = match.params.id;
   console.log(albumId);
 
@@ -84,7 +90,8 @@ const Album = ({ match, addToCurrentSong }) => {
                     {track.duration}
                   </td>
                   <td>
-                    <Button>
+                    <Button style={{borderRadius: "50%", background: "transparent", border: 'none'}}
+                    onClick={()=>addToPlaylist(track)}>
                     <FcLike/>
                     </Button>
                   </td>

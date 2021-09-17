@@ -5,7 +5,7 @@ const playlistReducer = (state = initialState.playlist.tracks, action) => {
     case "ADD_SONG_TO_PLAYLIST":
       return {
         ...state,
-        tracks: [...state.tracks, action.payload],
+        tracks: [...state.tracks, ...action.payload],
       };
     case "REMOVE_SONG_FROM_PLAYLIST":
       return {
