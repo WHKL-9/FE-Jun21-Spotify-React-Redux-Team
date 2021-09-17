@@ -1,6 +1,7 @@
 import React from "react";
 import RecentlyPlayed from "../components/RecentlyPlayed";
 import GoodMorning from "../components/GoodMorning";
+// import Favourites from "../components/Favourites"
 
 
 const Home = () => {

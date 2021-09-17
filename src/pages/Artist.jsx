@@ -55,7 +55,7 @@ const Artist = ({ match }) => {
             <div id="listeners">1,345,268 monthly listeners</div>
  <h1>{artistId?.name}</h1>
 </div>
-        <Row>
+        <Row className="ml-3">
    
             <div
               className="d-flex mr-auto mt-4"
@@ -68,7 +68,7 @@ const Artist = ({ match }) => {
                 <FaPlay/>
               </button>
               <button
-                className="btn btn-outline-light ml-5 mainButton"
+                className="btn btn-outline-light"
                 id="followButton"
               >
                 FOLLOW
@@ -76,7 +76,7 @@ const Artist = ({ match }) => {
             </div>
           
         </Row>
-        <Row className="mb-3">
+        <Row className="mb-3 ml-3">
           <Col xs={12}>
             <div className="mt-4 justify-content-start">
               <h2 className="text-white font-weight-bold">Popular</h2>
@@ -85,7 +85,7 @@ const Artist = ({ match }) => {
                 
           <p key={track.id} className="d-flex flex-row text-white">
             <img id="smallCardImg" src={track.album.cover_small} alt="" />
-            {track.title}{track.duration}
+            <div className="trackTitle">{track.title}</div>
             <button
                 className="btn btn-outline-light ml-auto"
                 id="favbtn"
@@ -100,7 +100,7 @@ const Artist = ({ match }) => {
             </div>
           </Col>
         </Row>
-        <Row className="mb-3">
+        <Row className="mb-3 ml-3">
           <Col xs={12}>
           <div className="mt-4 justify-content-start">
               <h2 className="text-white font-weight-bold">Popular releases</h2>
@@ -109,7 +109,7 @@ const Artist = ({ match }) => {
                 
           <p key={track.id} className="d-flex flex-row text-white">
             <img id="smallCardImg" src={track.album.cover_small} alt="" />
-            {track.title}{track.duration}
+            <div className="trackTitle">{track.title}</div>
             <button
                 className="btn btn-outline-light ml-auto"
                 id="favbtn"

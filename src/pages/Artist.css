@@ -41,6 +41,7 @@
     color: white;
     font-size: 11pt;
     margin-right: auto;
+    margin-left: 2rem;
     margin-bottom: 2rem;
   }
   
@@ -73,16 +74,33 @@
     border-radius: 5rem;
     height: 2.5rem;
     width: auto;
+    margin-top: 1.8rem;
+    margin-right: 1rem;
   }
   
   .titleMain {
     font-size: 5rem;
+    margin-left: 2rem;
   }
 
   #playButton {
     border-radius: 5rem;
+    height: 4rem;
+    width: 4rem;
+  }
+
+  #followButton {
+    height: 2.8rem;
+    margin-top: 0.6rem;
+    margin-left: 2rem;
   }
 
   .artistDiv {
     background-color: black;
   }
+
+  .trackTitle {
+    margin-left: 1rem;
+    margin-top: 1.5rem;
+  }
+
