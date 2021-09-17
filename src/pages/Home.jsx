@@ -8,7 +8,7 @@ const Home = () => {
     return (
       <>
         <GoodMorning artistName="Grimes" />
-        <RecentlyPlayed />
+        <RecentlyPlayed artistName="Folamour"/>
       </>
     )
   }
