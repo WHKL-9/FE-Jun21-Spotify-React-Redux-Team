@@ -4,6 +4,7 @@ import "./Artist.css";
 import SingleAlbum from "../components/SingleAlbum";
 import SingleSong from "../components/SingleSong";
 import { Link } from "react-router-dom";
+import { FaHeart, FaPlay } from 'react-icons/fa';
 
 const Artist = ({ match }) => {
   const artistId = match.params.id;
@@ -43,54 +44,91 @@ const Artist = ({ match }) => {
     getArtistObject();
   }, []);
 
-  return (
-    <div className="ml-5">
-      <img src={artistJumbo} alt="artist" />
-      <p className="text-white">{artistName}</p>
-      <div>
-        <h4 className="text-white">Top 5 Tracks</h4>
-        {topTrackArray.map((track) => (
-          <p key={track.id} className="text-white">
-            {track.title_short}
+  
+
+    return (
+      
+      <div className="artistDiv col-12 col-md-12">
+        <img className="artist__header" src={artistJumbo} alt="artist" />
+        <div className="header__wrap--art">
+        <h1 className="titleMain text-white mr-auto mt-auto">{artistName}</h1>
+            <div id="listeners">1,345,268 monthly listeners</div>
+ <h1>{artistId?.name}</h1>
+</div>
+        <Row>
+   
+            <div
+              className="d-flex mr-auto mt-4"
+              id="button-container"
+            >
+              <button
+                className="btn btn-success ml-4 mainButton"
+                id="playButton"
+              >
+                <FaPlay/>
+              </button>
+              <button
+                className="btn btn-outline-light ml-5 mainButton"
+                id="followButton"
+              >
+                FOLLOW
+              </button>
+            </div>
+          
+        </Row>
+        <Row className="mb-3">
+          <Col xs={12}>
+            <div className="mt-4 justify-content-start">
+              <h2 className="text-white font-weight-bold">Popular</h2>
+              
+              {topTrackArray.map((track) => (
+                
+          <p key={track.id} className="d-flex flex-row text-white">
+            <img id="smallCardImg" src={track.album.cover_small} alt="" />
+            {track.title}{track.duration}
+            <button
+                className="btn btn-outline-light ml-auto"
+                id="favbtn"
+              >
+                <FaHeart />
+              </button>
           </p>
         ))}
-      </div>
-      <div>
-        <h4 className="text-white">Top Albums</h4>
-        {topAlbumArray.map((track) => (
-        //  <Link to={`/Album/${track.id}`}>
-            <p key={track.id} className="text-white">
-              {track.title_short}
-            </p>
-        //  </Link>
+            </div>
+            <div className="pt-5 mb-5">
+              
+            </div>
+          </Col>
+        </Row>
+        <Row className="mb-3">
+          <Col xs={12}>
+          <div className="mt-4 justify-content-start">
+              <h2 className="text-white font-weight-bold">Popular releases</h2>
+              
+              {topTrackArray.map((track) => (
+                
+          <p key={track.id} className="d-flex flex-row text-white">
+            <img id="smallCardImg" src={track.album.cover_small} alt="" />
+            {track.title}{track.duration}
+            <button
+                className="btn btn-outline-light ml-auto"
+                id="favbtn"
+              >
+                <FaHeart/>
+              </button>
+          </p>
         ))}
-      </div>
-    </div>
-  );
-};
-// <div className="artist-page__wrap">
-//   <img className="artist__header" src={artistId.picture_xl} />
-//   <div className="header__wrap--art">
-//     <div className="listeners">{artistId?.nb_fan} MONTHLY LISTENERS</div>
-//     <h1>{artistId?.name}</h1>
-//   </div>
-//   <h2>Albums</h2>
-//   <div className="artist__line">
-//     {artistId?.albums?.map((album) => (
-//       <SingleAlbum src={album.cover_medium} key={album.id} />
-//     ))}
-//   </div>
-//   <h2>Top tracks</h2>
-//   <div className="artist__tracks">
-//     {artistId?.tracklist?.map((song) => (
-//       <SingleSong
-//         title={song.title}
-//         artistId={song.artistId.name}
-//         duration={song.duration / 60}
-//       />
-//     ))}
-//   </div>
-// </div>
-// );
-// };
+            </div>
+            <div className="pt-5 mb-5">
+              
+            </div>
+          </Col>
+          </Row>
+          </div>
+          
+      
+    );
+  }
+
+
 export default Artist;
