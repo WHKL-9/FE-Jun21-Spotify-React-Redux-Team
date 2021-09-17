@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../components/GoodMorning.css";
 
-const GoodMorning = ({ artistName }) => {
+
+
+const GoodMorning = ({ artistName, addToCurrentSong }) => {
   const [albumsArray, setAlbumsArray] = useState([]);
   const [artistId, setArtistId] = useState([]);
   const [searchInfo, setSearchInfo] = useState([]);
@@ -50,7 +52,7 @@ const GoodMorning = ({ artistName }) => {
       {/* </Link> */}
       <Row className="row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5">
         {albumsArray.map((songObj) => (
-          <Col className="px-0" key={songObj.id}>
+          <Col className="px-0" key={songObj.id} >
             <SmallCard songObj={songObj} />
           </Col>
         ))}

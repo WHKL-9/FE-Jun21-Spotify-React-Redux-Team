@@ -7,7 +7,9 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 
 export const initialState = {
   play: {
-      currentSong: {}
+    //   empty object will always return true 
+    // setting it to null is a safer option 
+      currentSong: (null)
   },
   playlist: {
     tracks: [],
