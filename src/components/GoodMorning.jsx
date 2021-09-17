@@ -25,9 +25,11 @@ const GoodMorning = ({ artistName }) => {
       );
 
       let albumsList = await response.json();
-      setAlbumsArray(albumsList.data.slice(0, 5));
-      setArtistId(albumsList.data);
-      setSearchInfo(albumsList);
+      if (response.ok) {
+        setAlbumsArray(albumsList.data.slice(0, 5));
+        setArtistId(albumsList.data);
+        setSearchInfo(albumsList);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -40,13 +42,12 @@ const GoodMorning = ({ artistName }) => {
   }, []);
 
   console.log(albumsArray);
-  console.log(searchInfo.data[0].artist.id);
 
   return (
     <Container>
-      <Link id="artistLink" to={`/artist/${searchInfo.data[0].artist.id}`}>
-        <h2 className="mt-5">{artistName}</h2>
-      </Link>
+      {/* <Link id="artistLink" to={`/artist/${searchInfo.data[0].artist.id}`}> */}
+      <h2 className="mt-5">{artistName}</h2>
+      {/* </Link> */}
       <Row className="row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5">
         {albumsArray.map((songObj) => (
           <Col className="px-0" key={songObj.id}>
