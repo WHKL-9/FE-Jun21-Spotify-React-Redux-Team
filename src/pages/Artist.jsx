@@ -4,7 +4,7 @@ import "./Artist.css";
 import SingleAlbum from "../components/SingleAlbum";
 import SingleSong from "../components/SingleSong";
 import { Link } from "react-router-dom";
-import { FaHeart, FaPlay } from 'react-icons/fa';
+import { FaHeart, FaPlay } from "react-icons/fa";
 
 const Artist = ({ match }) => {
   const artistId = match.params.id;
@@ -44,91 +44,62 @@ const Artist = ({ match }) => {
     getArtistObject();
   }, []);
 
-  
-
-    return (
-      
-      <div className="artistDiv col-12 col-md-12">
-        <img className="artist__header" src={artistJumbo} alt="artist" />
-        <div className="header__wrap--art">
+  return (
+    <div className="artistDiv col-12 col-md-12">
+      <img className="artist__header" src={artistJumbo} alt="artist" />
+      <div className="header__wrap--art">
         <h1 className="titleMain text-white mr-auto mt-auto">{artistName}</h1>
-            <div id="listeners">1,345,268 monthly listeners</div>
- <h1>{artistId?.name}</h1>
-</div>
-        <Row className="ml-3">
-   
-            <div
-              className="d-flex mr-auto mt-4"
-              id="button-container"
-            >
-              <button
-                className="btn btn-success ml-4 mainButton"
-                id="playButton"
-              >
-                <FaPlay/>
-              </button>
-              <button
-                className="btn btn-outline-light"
-                id="followButton"
-              >
-                FOLLOW
-              </button>
-            </div>
-          
-        </Row>
-        <Row className="mb-3 ml-3">
-          <Col xs={12}>
-            <div className="mt-4 justify-content-start">
-              <h2 className="text-white font-weight-bold">Popular</h2>
-              
-              {topTrackArray.map((track) => (
-                
-          <p key={track.id} className="d-flex flex-row text-white">
-            <img id="smallCardImg" src={track.album.cover_small} alt="" />
-            <div className="trackTitle">{track.title}</div>
-            <button
-                className="btn btn-outline-light ml-auto"
-                id="favbtn"
-              >
-                <FaHeart />
-              </button>
-          </p>
-        ))}
-            </div>
-            <div className="pt-5 mb-5">
-              
-            </div>
-          </Col>
-        </Row>
-        <Row className="mb-3 ml-3">
-          <Col xs={12}>
+        <div id="listeners">1,345,268 monthly listeners</div>
+        <h1>{artistId?.name}</h1>
+      </div>
+      <Row className="ml-3">
+        <div className="d-flex mr-auto mt-4" id="button-container">
+          <button className="btn btn-success ml-4 mainButton" id="playButton">
+            <FaPlay />
+          </button>
+          <button className="btn btn-outline-light" id="followButton">
+            FOLLOW
+          </button>
+        </div>
+      </Row>
+      <Row className="mb-3 ml-3">
+        <Col xs={12}>
           <div className="mt-4 justify-content-start">
-              <h2 className="text-white font-weight-bold">Popular releases</h2>
-              
-              {topTrackArray.map((track) => (
-                
-          <p key={track.id} className="d-flex flex-row text-white">
-            <img id="smallCardImg" src={track.album.cover_small} alt="" />
-            <div className="trackTitle">{track.title}</div>
-            <button
-                className="btn btn-outline-light ml-auto"
-                id="favbtn"
-              >
-                <FaHeart/>
-              </button>
-          </p>
-        ))}
-            </div>
-            <div className="pt-5 mb-5">
-              
-            </div>
-          </Col>
-          </Row>
-          </div>
-          
-      
-    );
-  }
+            <h2 className="text-white font-weight-bold">Popular</h2>
 
+            {topTrackArray.map((track) => (
+              <p key={track.id} className="d-flex flex-row text-white">
+                <img id="smallCardImg" src={track.album.cover_small} alt="" />
+                <div className="trackTitle">{track.title}</div>
+                <button className="btn btn-outline-light ml-auto" id="favbtn">
+                  <FaHeart />
+                </button>
+              </p>
+            ))}
+          </div>
+          <div className="pt-5 mb-5"></div>
+        </Col>
+      </Row>
+      <Row className="mb-3 ml-3">
+        <Col xs={12}>
+          <div className="mt-4 justify-content-start">
+            <h2 className="text-white font-weight-bold">Popular releases</h2>
+
+            {topTrackArray.map((track) => (
+              <p key={track.id} className="d-flex flex-row text-white">
+                <img id="smallCardImg" src={track.album.cover_small} alt="" />
+                <div className="trackTitle">{track.title}</div>
+                <button className="btn btn-outline-light ml-auto" id="favbtn">
+                  <FaHeart />
+                </button>
+              </p>
+            ))}
+          </div>
+          <div className="pt-5 mb-5"></div>
+        </Col>
+      </Row>
+    </div>
+  );
+};
 
 export default Artist;
